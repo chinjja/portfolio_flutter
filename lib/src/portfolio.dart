@@ -899,75 +899,89 @@ class Projects extends StatelessWidget {
     required String description,
     required Map<String, String> features,
   }) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: MyCard(
-        child: Padding(
-          padding: const EdgeInsets.all(24.0),
-          child: Column(
-            children: [
-              Column(
-                children: [
-                  Text(
-                    title,
-                    style: const TextStyle(
-                      fontSize: 32,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  const SizedBox(height: 8),
-                  Text(subtitle),
-                ],
-              ),
-              const SizedBox(height: 24),
-              Wrap(
-                alignment: WrapAlignment.center,
-                children: [
-                  Container(
-                    alignment: Alignment.topCenter,
-                    padding: const EdgeInsets.all(8),
-                    width: 440,
-                    height: 440,
-                    child: MyImagePagenation(
-                      images: images,
-                    ),
-                  ),
-                  Container(
-                    padding: const EdgeInsets.all(8),
-                    width: 440,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(description),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 8),
-                          child: ElevatedButton(
-                            onPressed: () {
-                              MyMarkdownPage.push(
-                                context,
-                                readme,
-                              );
-                            },
-                            child: const Text('자세히 보기'),
-                          ),
-                        ),
-                        const Divider(),
-                        Column(
-                          children: features.entries
-                              .map((e) =>
-                                  TextWithCircle(summary: e.key, text: e.value))
-                              .toList(),
-                        )
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ],
+    return LayoutBuilder(builder: (context, constraints) {
+      final children = [
+        Flexible(
+          child: Container(
+            alignment: Alignment.topCenter,
+            padding: const EdgeInsets.all(8),
+            width: 500,
+            height: 440,
+            child: MyImagePagenation(
+              images: images,
+            ),
           ),
         ),
-      ),
-    );
+        Flexible(
+          child: Container(
+            padding: const EdgeInsets.all(8),
+            width: 500,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(description),
+                Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 8),
+                  child: ElevatedButton(
+                    onPressed: () {
+                      MyMarkdownPage.push(
+                        context,
+                        readme,
+                      );
+                    },
+                    child: const Text('자세히 보기'),
+                  ),
+                ),
+                const Divider(),
+                Column(
+                  children: features.entries
+                      .map((e) => TextWithCircle(summary: e.key, text: e.value))
+                      .toList(),
+                )
+              ],
+            ),
+          ),
+        ),
+      ];
+
+      return Padding(
+        padding: const EdgeInsets.symmetric(vertical: 8),
+        child: MyCard(
+          child: Padding(
+            padding: const EdgeInsets.all(24.0),
+            child: Column(
+              children: [
+                Column(
+                  children: [
+                    Text(
+                      title,
+                      style: const TextStyle(
+                        fontSize: 32,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const SizedBox(height: 8),
+                    Text(subtitle),
+                  ],
+                ),
+                const SizedBox(height: 24),
+                if (constraints.maxWidth < 800)
+                  Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: children,
+                  )
+                else
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: children,
+                  )
+              ],
+            ),
+          ),
+        ),
+      );
+    });
   }
 }
 
