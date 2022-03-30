@@ -173,12 +173,13 @@ class Header extends StatelessWidget {
   final GlobalKey linkKey;
   @override
   Widget build(BuildContext context) {
+    final padding = MediaQuery.of(context).padding;
     return SliverToBoxAdapter(
       child: Stack(
         children: [
           SizedBox(
             width: double.infinity,
-            height: 500,
+            height: 500 + padding.top,
             child: Image.asset(
               'assets/images/banner.jpg',
               fit: BoxFit.cover,
@@ -1105,11 +1106,14 @@ class Footer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final padding = MediaQuery.of(context).padding;
     return SliverToBoxAdapter(
       child: Container(
-        height: 100,
+        padding: EdgeInsets.only(bottom: padding.bottom),
+        height: 80 + padding.bottom,
         color: Colors.grey[900],
-        child: const Center(
+        child: const Align(
+          alignment: Alignment.bottomCenter,
           child: SizedBox(
             child: Text(
               '2022. Chinjja. All rights reserved',
