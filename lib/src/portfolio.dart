@@ -344,7 +344,7 @@ class AboutMe extends StatelessWidget {
           SliverToBoxAdapter(
             child: Center(
               child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 60),
+                padding: const EdgeInsets.symmetric(horizontal: 16),
                 width: 800,
                 child: Column(
                   children: const [
