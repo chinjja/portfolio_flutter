@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_linkify/flutter_linkify.dart';
+import 'package:portfolio/src/masonry.dart';
 import 'package:portfolio/src/pages.dart';
 import 'package:portfolio/src/widgets.dart';
 import 'package:sliver_tools/sliver_tools.dart';
@@ -397,59 +398,50 @@ class Skills extends StatelessWidget {
         padding: const EdgeInsets.symmetric(
           vertical: 60,
         ),
-        child: Column(
-          children: [
-            MyLinkTitle(
-              'SKILLS',
-              parent: context,
-            ),
-            Padding(
-              padding: const EdgeInsets.all(24),
-              child: LayoutBuilder(builder: (context, constraints) {
-                final cols = (constraints.maxWidth ~/ 300).clamp(1, 3);
-                return SizedBox(
-                  width: 1000,
-                  height: cols == 1
-                      ? 1480
-                      : cols == 2
-                          ? 840
-                          : 550,
-                  child: Align(
-                    alignment: Alignment.topCenter,
-                    child: Wrap(
-                      direction: Axis.vertical,
-                      spacing: 16,
-                      runSpacing: 32,
-                      children: [
-                        _skill(title: 'Mobile App', children: [
-                          _flutterLogo(),
-                          _androidLogo(),
-                          _javaLogo(),
-                        ]),
-                        _skill(title: 'Desktop App', children: [
-                          _javaLogo(),
-                        ]),
-                        _skill(title: 'Backend', children: [
-                          _springLogo(),
-                          _javaLogo(),
-                        ]),
-                        _skill(title: 'FrontEnd', children: [
-                          _flutterLogo(),
-                        ]),
-                        _skill(title: 'Database', children: [
-                          _sqliteLogo(),
-                        ]),
-                        _skill(title: 'Version Control', children: [
-                          _gitLogo(),
-                          _githubLogo(),
-                        ]),
-                      ],
-                    ),
+        child: Center(
+          child: SizedBox(
+            width: 1000,
+            child: Column(
+              children: [
+                MyLinkTitle(
+                  'SKILLS',
+                  parent: context,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(24),
+                  child: Masonry(
+                    horizontalExtent: 250,
+                    horizontalSpacing: 32,
+                    verticalSpacing: 16,
+                    children: [
+                      _skill(title: 'Mobile App', children: [
+                        _flutterLogo(),
+                        _androidLogo(),
+                        _javaLogo(),
+                      ]),
+                      _skill(title: 'Desktop App', children: [
+                        _javaLogo(),
+                      ]),
+                      _skill(title: 'Backend', children: [
+                        _springLogo(),
+                        _javaLogo(),
+                      ]),
+                      _skill(title: 'FrontEnd', children: [
+                        _flutterLogo(),
+                      ]),
+                      _skill(title: 'Database', children: [
+                        _sqliteLogo(),
+                      ]),
+                      _skill(title: 'Version Control', children: [
+                        _gitLogo(),
+                        _githubLogo(),
+                      ]),
+                    ],
                   ),
-                );
-              }),
+                ),
+              ],
             ),
-          ],
+          ),
         ),
       ),
     );
@@ -543,44 +535,46 @@ class Skills extends StatelessWidget {
   }
 
   Widget _skill({required String title, required List<Widget> children}) {
-    return MyHOverWidget(
-      child: MyCard(
-        child: Container(
-          width: 250,
-          padding: const EdgeInsets.all(24.0),
-          child: Column(
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Container(
-                padding: const EdgeInsets.only(bottom: 8),
-                width: double.infinity,
-                decoration: const BoxDecoration(
-                  border: Border(bottom: BorderSide()),
-                ),
-                child: Text(
-                  title,
-                  style: TextStyle(
-                    color: Colors.orange[700],
-                    fontSize: 22,
-                    fontWeight: FontWeight.bold,
+    return Center(
+      child: MyHOverWidget(
+        child: MyCard(
+          child: Container(
+            width: 250,
+            padding: const EdgeInsets.all(24.0),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Container(
+                  padding: const EdgeInsets.only(bottom: 8),
+                  width: double.infinity,
+                  decoration: const BoxDecoration(
+                    border: Border(bottom: BorderSide()),
+                  ),
+                  child: Text(
+                    title,
+                    style: TextStyle(
+                      color: Colors.orange[700],
+                      fontSize: 22,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
-              ),
-              const SizedBox(height: 8),
-              Column(
-                mainAxisSize: MainAxisSize.min,
-                children: children
-                    .map(
-                      (e) => Center(
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 4.0),
-                          child: e,
+                const SizedBox(height: 8),
+                Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: children
+                      .map(
+                        (e) => Center(
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 4.0),
+                            child: e,
+                          ),
                         ),
-                      ),
-                    )
-                    .toList(),
-              ),
-            ],
+                      )
+                      .toList(),
+                ),
+              ],
+            ),
           ),
         ),
       ),
