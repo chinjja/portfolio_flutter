@@ -232,9 +232,9 @@ class Header extends StatelessWidget {
                 Column(
                   children: const [
                     Text(
-                      '안녕하세요.\n'
-                      '공부가 취미인 개발자입니다.\n'
-                      '매우 꼼꼼한 성격, 그리고 공부를 밥 먹듯이 하는 습관이 저의 장점입니다.',
+                      '코드로 일하는 개발자\n'
+                      '문제해결을 즐기는 개발자\n'
+                      '사람들이 필요로 하는 것이 무엇인지 고민하는 개발자',
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         height: 1.3,
@@ -349,6 +349,7 @@ class AboutMe extends StatelessWidget {
                 width: 800,
                 child: Column(
                   children: const [
+                    SizedBox(height: 8),
                     Text(
                       '저의 최대 장점은...',
                       style: TextStyle(
