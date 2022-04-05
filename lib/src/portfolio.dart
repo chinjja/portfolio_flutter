@@ -827,6 +827,34 @@ class Projects extends StatelessWidget {
       ),
       _item(
         context,
+        title: 'Instagram 클론코딩',
+        subtitle: '2022.04 (1人 개인 프로젝트)',
+        readme: 'assets/projects/instagram/README.md',
+        images: [
+          'assets/projects/instagram/1.jpg',
+          'assets/projects/instagram/2.jpg',
+          'assets/projects/instagram/3.jpg',
+          'assets/projects/instagram/4.jpg',
+          'assets/projects/instagram/5.jpg',
+          'assets/projects/instagram/6.jpg',
+          'assets/projects/instagram/7.jpg',
+          'assets/projects/instagram/8.jpg',
+          'assets/projects/instagram/9.jpg',
+          'assets/projects/instagram/10.jpg',
+          'assets/projects/instagram/11.jpg',
+        ],
+        description: 'Firebase 테스트 겸 제작하였습니다.\n\n'
+            '모바일 환경에서 레이아웃이 최적화되었습니다.\n'
+            'Web, iOS, Android에서 실행 가능합니다.',
+        features: {
+          '주요기능': '게시물, 댓글, 활동, 북마크, 채팅 기능',
+          'Github': 'https://github.com/chinjja/instagram',
+          'Web URL': 'https://chinjja.github.io/instagram/',
+          'Frontend': 'Flutter, iOS, Android',
+        },
+      ),
+      _item(
+        context,
         title: '포트폴리오 웹사이트',
         subtitle: '2022.03 (1人 개인 프로젝트)',
         readme: 'assets/projects/portfolio/README.md',
