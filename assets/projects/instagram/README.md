@@ -25,6 +25,6 @@ Authentication: 인증을 편리하게 만들어 준다.
 
 ## 🔨 **Technology Stack(s)**
 
-- Stack: Flutter
+- Stack: Flutter, Bloc
 - Database: Firestore
 - Deployment: GitHub Page

@@ -847,6 +847,7 @@ class Projects extends StatelessWidget {
             '모바일 환경에서 레이아웃이 최적화되었습니다.\n'
             'Web, iOS, Android에서 실행 가능합니다.',
         features: {
+          'Stack': 'Flutter, Firestore, Bloc',
           '주요기능': '게시물, 댓글, 활동, 북마크, 채팅 기능',
           'Github': 'https://github.com/chinjja/instagram',
           'Web URL': 'https://chinjja.github.io/instagram/',
