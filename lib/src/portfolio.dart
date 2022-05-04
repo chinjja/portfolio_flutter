@@ -342,32 +342,6 @@ class AboutMe extends StatelessWidget {
               ),
             ),
           ),
-          SliverToBoxAdapter(
-            child: Center(
-              child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                width: 800,
-                child: Column(
-                  children: const [
-                    SizedBox(height: 8),
-                    Text(
-                      '저의 최대 장점은...',
-                      style: TextStyle(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    SizedBox(height: 8),
-                    Text(
-                      '독학으로 시작하여 모든것을 혼자서 개발하엿습니다.\n정말 많은 길을 돌아 쌓인 시행착오들이 저의 최대 장점입니다.\n어떤 언어, Tool도 빠르게 적용하고, 신뢰도 또한 보장합니다.',
-                      textAlign: TextAlign.center,
-                    ),
-                    SizedBox(height: 16),
-                  ],
-                ),
-              ),
-            ),
-          ),
         ],
       ),
     );
