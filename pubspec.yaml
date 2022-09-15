@@ -29,10 +29,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  flutter_linkify:
-  url_launcher:
-  sliver_tools:
-  flutter_markdown:
+  flutter_linkify: ^5.0.2
+  url_launcher: ^6.1.5
+  sliver_tools: ^0.2.8
+  flutter_markdown: ^0.6.12
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -71,6 +71,7 @@ flutter:
     - assets/projects/portfolio/
     - assets/projects/daf/
     - assets/projects/instagram/
+    - assets/projects/talk/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

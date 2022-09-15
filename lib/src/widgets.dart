@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_linkify/flutter_linkify.dart';
 import 'package:portfolio/src/pages.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class MyCard extends StatelessWidget {
   const MyCard({Key? key, this.child}) : super(key: key);
@@ -185,8 +185,8 @@ class MyUrlWidget extends StatelessWidget {
           Linkify(
             text: url,
             onOpen: (link) async {
-              if (await canLaunch(link.url)) {
-                await launch(link.url);
+              if (await canLaunchUrlString(link.url)) {
+                await launchUrlString(link.url);
               } else {
                 throw 'Could not launch $link';
               }
@@ -338,8 +338,8 @@ class TextWithCircle extends StatelessWidget {
             child: Linkify(
               text: text,
               onOpen: (link) async {
-                if (await canLaunch(link.url)) {
-                  await launch(link.url);
+                if (await canLaunchUrlString(link.url)) {
+                  await launchUrlString(link.url);
                 }
               },
             ),

@@ -4,7 +4,7 @@ import 'package:portfolio/src/masonry.dart';
 import 'package:portfolio/src/pages.dart';
 import 'package:portfolio/src/widgets.dart';
 import 'package:sliver_tools/sliver_tools.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -13,9 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "PJH's Portfolio",
-      theme: ThemeData(
-        dividerColor: Colors.grey[800],
-      ),
+      theme: ThemeData(dividerColor: Colors.grey[800], useMaterial3: true),
       home: const MyHomePage(),
     );
   }
@@ -647,8 +645,8 @@ class Archiving extends StatelessWidget {
                   Linkify(
                     text: url,
                     onOpen: (link) async {
-                      if (await canLaunch(link.url)) {
-                        await launch(link.url);
+                      if (await canLaunchUrlString(link.url)) {
+                        await launchUrlString(link.url);
                       }
                     },
                   ),
@@ -821,7 +819,7 @@ class Projects extends StatelessWidget {
             '모바일 환경에서 레이아웃이 최적화되었습니다.\n'
             'Web, iOS, Android에서 실행 가능합니다.',
         features: {
-          'Stack': 'Flutter, Firestore, Bloc',
+          'Stack': 'Flutter, Firestore',
           '주요기능': '게시물, 댓글, 활동, 북마크, 채팅 기능',
           'Github': 'https://github.com/chinjja/instagram',
           'Web URL': 'https://chinjja.github.io/instagram/',
