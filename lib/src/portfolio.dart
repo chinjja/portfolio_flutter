@@ -828,6 +828,24 @@ class Projects extends StatelessWidget {
       ),
       _item(
         context,
+        title: 'Sketch Book',
+        subtitle: '2022년 (1人 개인 프로젝트)',
+        readme: 'assets/projects/sketch/README.md',
+        images: [
+          'assets/projects/sketch/1.png',
+          'assets/projects/sketch/2.png',
+          'assets/projects/sketch/3.png',
+        ],
+        description: '스케치 북 구현',
+        features: {
+          '주요기능': '드로잉 & 지우기 & 레이어',
+          'Github': 'https://github.com/chinjja/sketch',
+          'Web URL': 'https://chinjja.github.io/sketch/',
+          'Stack': 'Flutter',
+        },
+      ),
+      _item(
+        context,
         title: 'Chat 앱',
         subtitle: '2022.08 (1人 개인 프로젝트)',
         readme: 'assets/projects/talk/README.md',
