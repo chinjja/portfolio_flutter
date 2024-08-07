@@ -846,25 +846,6 @@ class Projects extends StatelessWidget {
       ),
       _item(
         context,
-        title: 'Chat 앱',
-        subtitle: '2022.08 (1人 개인 프로젝트)',
-        readme: 'assets/projects/talk/README.md',
-        images: [
-          'assets/projects/talk/1.png',
-          'assets/projects/talk/2.png',
-          'assets/projects/talk/3.png',
-          'assets/projects/talk/4.png',
-        ],
-        description: 'Spring Boot & Fluuter Bloc 테스트 겸 제작하였습니다.\n\n',
-        features: {
-          'Stack': 'Flutter, Bloc, Spring Boot',
-          '주요기능': '1:1 채팅, 그룹 채팅, 이메일 인증',
-          'Front-End Github': 'https://github.com/chinjja/flutter_talk',
-          'Back-End Github': 'https://github.com/chinjja/spring_talk',
-        },
-      ),
-      _item(
-        context,
         title: '포트폴리오 웹사이트',
         subtitle: '2022.03 (1人 개인 프로젝트)',
         readme: 'assets/projects/portfolio/README.md',
