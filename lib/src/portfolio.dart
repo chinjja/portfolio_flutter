@@ -822,7 +822,7 @@ class Projects extends StatelessWidget {
           'Stack': 'Flutter, Firestore',
           '주요기능': '게시물, 댓글, 활동, 북마크, 채팅 기능',
           'Github': 'https://github.com/chinjja/instagram',
-          'Web URL': 'https://chinjja.github.io/instagram/',
+          'Web URL': 'https://instagram-21e39.firebaseapp.com/',
           'Frontend': 'Flutter, iOS, Android',
         },
       ),
